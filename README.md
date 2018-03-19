@@ -2,7 +2,7 @@
 > Simple code to debug email template in CakePHP
 
 ## Usage example
-This code debug reservations email in view__
+This code debug reservations email in view <br />
 Copy code to any index() function to load template
 
 ## Meta
