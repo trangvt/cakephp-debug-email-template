@@ -1,15 +1,16 @@
 <?php
-function debug_email_template()
-{
-    $cartId = 20;
-    $replace = $this->MailTemplateObject->makeCartByCartId($cartId, true);
-    foreach ((array)Hash::get($replace, "reservations") as $records) {
-        foreach ($records as $key => $value) {
-            echo '<pre>';
-            var_dump($key);
-            echo '</pre>';
-            $this->set($key, $value);
-        }
+$cartId = 20;
+//get cart data
+$cartData = $this->YourModel->makeCartByCartId($cartId, true);
+
+foreach ((array)Hash::get($cartData, "reservations") as $records) {
+    foreach ($records as $key => $value) {
+        echo '<pre>';
+        var_dump($key);
+        echo '</pre>';
+        $this->set($key, $value);
     }
-    return $this->render('/emails/reservations');
 }
+
+return $this->render('/emails/reservations');
+die();
